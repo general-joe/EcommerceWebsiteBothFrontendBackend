@@ -14,12 +14,11 @@ datasource db {
 }
 
 model client {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   username String
-  email    String  @unique
+  email    String @unique
   password String
 }
-
 
 model order {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
@@ -28,10 +27,29 @@ model order {
   delivery    delivery?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  
 }
 
+model clothes {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  brand     String
+  size      String
+  quantity  Int
+  type      String
+  gender    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 
+model sneakers {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  brand     String
+  size      String
+  quantity  Int
+  type      String
+  gender    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 
 model delivery {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
