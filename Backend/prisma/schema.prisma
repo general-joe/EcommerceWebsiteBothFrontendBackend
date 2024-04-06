@@ -21,10 +21,10 @@ model client {
 }
 
 model collection {
-    id       String  @id @default(auto()) @map("_id") @db.ObjectId
-    type String
-    createdAT DateTime @default(now())
-    updatedAT DateTime @updatedAt
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  type      String
+  createdAT DateTime @default(now())
+  updatedAT DateTime @updatedAt
 }
 
 model order {
