@@ -20,6 +20,9 @@ model client {
   password String
 }
 
+model collection {
+    id       String  @id @default(auto()) @map("_id") @db.ObjectId
+}
 
 model order {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
