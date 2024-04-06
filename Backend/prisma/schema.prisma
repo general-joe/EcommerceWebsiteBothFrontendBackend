@@ -20,6 +20,13 @@ model client {
   password String
 }
 
+model collection {
+    id       String  @id @default(auto()) @map("_id") @db.ObjectId
+    type String
+    createdAT DateTime @default(now())
+    updatedAT DateTime @updatedAt
+}
+
 model order {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   subTotal    String    @default("0.00")
