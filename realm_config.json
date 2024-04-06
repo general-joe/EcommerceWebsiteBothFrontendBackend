@@ -1,7 +1,0 @@
-{
-    "app_id": "merchup-zcehy",
-    "config_version": 20210101,
-    "name": "MerchUp",
-    "provider_region": "aws-eu-west-2",
-    "deployment_model": "LOCAL"
-}
