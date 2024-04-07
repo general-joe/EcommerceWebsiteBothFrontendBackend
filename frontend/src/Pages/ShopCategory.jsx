@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+
+import "./ShopCategory.css";
 
 const ShopCategory = () => {
   return (
-    <div>
+    <div className="ShopCategory">
+      
       
     </div>
-  )
-}
+  );
+};
 
-export default ShopCategory
+export default ShopCategory;

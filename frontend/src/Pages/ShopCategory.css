@@ -1,0 +1,14 @@
+.ShopCategory {
+    display: flex;
+    /* padding-top: 50px;    */
+
+}
+.ShopCategory img{
+   
+}
+.ShopCategory div{
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    
+}
