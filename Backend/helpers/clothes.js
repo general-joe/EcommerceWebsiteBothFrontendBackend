@@ -1,56 +1,49 @@
-const prisma = require ("../utils/prismaUtil");
+const prisma = require("../utils/prisma");
 
+const saveClothes = async(data) => {    
+    const clothes = await prisma.clothes.create({
+        data,
+    })
+    return clothes
+};
 
-const saveClothe =  async(data)=>{
-    const clothe = await prisma.clothe.create({
+const getClothes = async () =>{
+    const clothes = await prisma.clothes.findMany({});
+    return clothes
+};
+
+const getsingleClothe = async(id) =>{
+    const clothe = await prisma.clothe.findUnique({
+        where: {
+            id,
+        }
+    })
+    return clothe
+};
+
+const updateClothe = async(id, data) =>{
+    const clothe = await prisma.clothe.update({
+        where: {
+            id,
+        },
         data,
     })
     return clothe
-}
+};
 
-const getClothe = async(id)=>{
-    const clothe =  await prisma.clothe.findUnique({
-        where:{
-            id
-        }
-    })
-    return clothe
-}
-
-const getClothes = async()=>{
-    const clothes =  await prisma.clothe.findMany({
-        where:{
-            orderBy:{
-                createdAt:'desc'
-            }
-        }
-    })
-    return clothes
-}
-
-const deleteClothe = async(id)=>{
-    const clothe =  await prisma.clothe.delete({
-        where:{
-            id
-        }
-    })
-    return clothe   
-}
-const patchClothe = async (id,data)=>{
-    const clothe =  await prisma.clothe.update({
-        where:{
-            id
+const removeClothe = async(id) =>{
+    const clothe = await prisma.clothe.delete({
+        where: {
+            id,
         },
-        data
     })
     return clothe
-}
-module.exports = {
-    saveClothe,
-    getClothe,
-    getClothes,
-            
-    deleteClothe,
-    patchClothe                     
+};
 
-}
+module.exports = {
+    saveClothes,
+    getClothes,
+    getsingleClothe,
+    updateClothe,
+    removeClothe,
+};
