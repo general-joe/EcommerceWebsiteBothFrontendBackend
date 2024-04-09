@@ -37,12 +37,12 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="productdisplay-right-description">
-          A lightweight, usually knitted, pullover shirt, close fitting and a
+          A lightweight, usually knitted, pullover shirt, close fitting and with a
           round neckline short sleeves, worn as an undershirt or outer garment.
         </div>
         <div className="productdisplay-right-size">
           <h1>Select Size</h1>
-          <div className="productdisplay-right-size">
+          <div className="productdisplay-right-sizes">
             <div>S</div>
             <div>M</div>
             <div>L</div>
