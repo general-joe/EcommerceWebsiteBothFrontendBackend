@@ -7,7 +7,6 @@ const sneakers = require("./sneakers");
 const clothes = require("./clothes");
 const delivery = require("./delivery");
 
-const delivery = require("./delivery")
 route.use("/client", client);
 route.use("/collection", collection);
 route.use("/delivery", delivery);

@@ -1,4 +1,4 @@
-const prisma = require("../utils/prisma");
+const prisma = require("../utils/prismaUtil");
 
 const saveClothes = async(data) => {    
     const clothes = await prisma.clothes.create({

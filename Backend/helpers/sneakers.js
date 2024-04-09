@@ -1,4 +1,4 @@
-const prisma = require ("../utils/prismaUtils")
+const prisma = require("../utils/prismaUtil")
 
 const addSneakers = async(data) =>{ 
     const sneakers = await prisma.sneakers.create({
