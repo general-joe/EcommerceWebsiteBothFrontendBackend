@@ -17,19 +17,6 @@ const getDeliveries = async (data) => {
      return deliveries;
 };
 
-const getDeliveryByClientId = async (id) => {
-     const order = await prisma.delivery.findFirst({
-          where: {
-               clientId: id,
-          },
-     });
-     const delivery = await prisma.delivery.findFirst({
-          where: {
-               orderId: order.id,
-          },
-     });
-     return { order, delivery };
-};
 
 const getSingleDelivery = async (id) => {
      const delivery = await prisma.delivery.findUnique({
@@ -61,7 +48,6 @@ const removeDelivery = async (id) => {
 module.exports = {
      addDelivery,
      getDeliveries,
-     getDeliveryByClientId,
      getSingleDelivery,
      editDelivery,
      removeDelivery,
