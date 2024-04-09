@@ -5,7 +5,6 @@ const logger = require("../utils/loggerUtil");
 const {
      addDelivery,
      getDeliveries,
-     getDeliveryByClientId,
      getSingleDelivery,
      editDelivery,
      removeDelivery,
