@@ -98,8 +98,8 @@ exports.login = async (req, res, next) => {
      }
       
 }
-     } catch (error) {
-       logger.error(error);
-       next(new CustomError(500, error));
-     }
-   };
+}catch (error) {
+  logger.error(error);
+  next(new CustomError(500, error));
+}
+};
