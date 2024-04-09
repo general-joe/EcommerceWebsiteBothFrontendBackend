@@ -11,9 +11,9 @@ const delivery = require("./delivery")
 route.use("/client", client);
 route.use("/collection", collection);
 route.use("/delivery", delivery);
-route.use("clothes", clothes);
-route.use("order", order);
-route.use("sneakers", sneakers);
+route.use("/clothes", clothes);
+route.use("/order", order);
+route.use("/sneakers", sneakers);
 
 
 
