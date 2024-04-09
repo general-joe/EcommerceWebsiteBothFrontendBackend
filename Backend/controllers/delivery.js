@@ -61,3 +61,16 @@ exports.edit_delivery = async (req, res, next) => {
           next(new CustomError(500, error));
      }
 };
+
+exports.removeDelivery = async (req, res, next) => {
+     try {
+          const { id } = req.param;
+          const delivery = await removeDelivery(id);
+          res.status(httpstatus.OK).json({
+               delivery,
+          });
+     } catch (error) {
+          logger.error(error);
+          next(new CustomError(500, error));
+     }
+};
