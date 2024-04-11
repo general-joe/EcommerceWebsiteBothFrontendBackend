@@ -42,7 +42,8 @@ exports.getClients = async (req, res, next) => {
 
 exports.getClientById = async (req, res, next) => {
      try {
-          const client = await getClientById(req.params.id);
+          const {id} = req.params
+          const client = await getClientById(id);
           delete client.password
           res.status(httpstatus.OK).json({
                client,
