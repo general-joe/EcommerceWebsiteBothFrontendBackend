@@ -4,17 +4,28 @@
   background: #fce3fe;
   padding-top: 100px;
 }
+.flex{
+  display: flex;
+  justify-content: space-around ;
+}
+.image{
+  width: 500px; 
+  height: 450px;
+  image-resolution: high resolution;
+}
 
 .loginsignup-container {
   width: 580px;
   height: 500px;
-  background: white;
-  margin: auto;
+  background: rgb(255, 255, 255);
   padding: 40px 60px;
+  
 }
 
 .loginsignup-container h1 {
   margin: 20px 0px;
+  color: #ff4141;
+  text-shadow: 2px 2px 2px rgb(160, 155, 155);
 }
 
 .loginsignup-fields {
