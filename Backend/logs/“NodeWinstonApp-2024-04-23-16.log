@@ -1,1 +1,15 @@
 2024-04-23T16:37:15.740Z [31merror[39m:	addCollection is not defined
+2024-04-23T16:48:35.585Z [31merror[39m:	
+Invalid `prisma.clothes.create()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\backend\helpers\clothes.js:4:42
+
+  1 const prisma = require("../utils/prismaUtil");
+  2 
+  3 const saveClothes = async(data) => {    
+→ 4     const clothes = await prisma.clothes.create({
+          data: {
+        +   image: String
+          }
+        })
+
+Argument `image` is missing.
