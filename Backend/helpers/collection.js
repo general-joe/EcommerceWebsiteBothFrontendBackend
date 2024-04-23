@@ -8,7 +8,7 @@ const addCollection= async (data) => {
 const getCollection = async () => {
   const collection = await prisma.collection.findMany({
     orderBy: {
-      createdAt: "desc",
+      createdAT: "desc",
     },
   });
   return collection;

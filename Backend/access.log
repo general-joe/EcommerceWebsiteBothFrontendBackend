@@ -6,3 +6,4 @@
 ::1 - - [23/Apr/2024:16:37:15 +0000] "POST /api/v1/web/clothes/save HTTP/1.1" 500 1533 "-" "PostmanRuntime/7.37.3"
 ::1 - - [23/Apr/2024:16:48:35 +0000] "POST /api/v1/web/clothes/save HTTP/1.1" 500 848 "-" "PostmanRuntime/7.37.3"
 ::1 - - [23/Apr/2024:19:50:35 +0000] "POST /api/v1/web/collection/save HTTP/1.1" 500 791 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:20:29:41 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 500 1192 "-" "PostmanRuntime/7.37.3"
