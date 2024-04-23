@@ -15,18 +15,26 @@ const {
 } = require("../helpers/clothes");
 
 exports.saveClothes= async(req,res,next) => {
-    try{
-        const data = req.body
-        const clothe = await saveClothes(data);
+    try {
+        const data = req.body;
+        const image = req.file ? req.file.path : undefined;
+        if (image) {
+          const uploaded = await cloudinary.uploader.upload(image, {
+            folder: "images",
+          });
+          if (uploaded) {
+            data.image = uploaded.secure_url;
+          }
+        }
+        const collection = await addCollection(data);
+    
         res.status(httpstatus.OK).json({
-            clothe,
-        })
-
-    }catch(error){
+          collection,
+        });
+      } catch (error) {
         logger.error(error);
         next(new CustomError(500, error));
-    }
-   
+      }
 };
 
 exports.getClothes = async(req,res, next) => {
