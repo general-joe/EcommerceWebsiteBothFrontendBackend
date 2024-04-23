@@ -9,7 +9,9 @@ const getCollection = async () => {
   const collection = await prisma.collection.findMany({
     orderBy: {
       createdAT: "desc",
+      
     },
+    
     include:{      
         clothes: true
     }
