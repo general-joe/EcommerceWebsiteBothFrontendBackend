@@ -25,7 +25,7 @@ model collection {
   type      String
   createdAT DateTime @default(now())
   updatedAT DateTime @updatedAt
-
+  All status
   clothes clothes[]
 }
 
@@ -69,3 +69,6 @@ model delivery {
   updatedAt   DateTime @updatedAt
 }
 
+enum status {
+  All
+}
