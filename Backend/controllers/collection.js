@@ -16,17 +16,7 @@ const {
 exports.saveCollection= async (req, res, next) => {
   try {
     const data = req.body;
-    const image = req.file ? req.file.path : undefined;
-    if (image) {
-      const uploaded = await cloudinary.uploader.upload(image, {
-        folder: "images",
-      });
-      if (uploaded) {
-        data.image = uploaded.secure_url;
-      }
-    }
     const collection = await addCollection(data);
-
     res.status(httpstatus.OK).json({
       collection,
     });

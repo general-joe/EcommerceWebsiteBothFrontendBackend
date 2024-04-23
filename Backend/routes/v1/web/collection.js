@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const router = Router();
 const collection = require("../../../controllers/collection");
-const upload = require("../../../utils/multerUtil");
 
-router.post("/save", upload.single("image"), collection.saveCollection)
+
+router.post("/save",  collection.saveCollection)
 router.get("/list", collection.getCollection)
 router.get("/:id", collection.getSingleCollection)
 router.patch("/:id", collection.editCollection)

@@ -22,7 +22,6 @@ model client {
 
 model collection {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  image     String
   type      types
   createdAT DateTime @default(now())
   updatedAT DateTime @updatedAt
