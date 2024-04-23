@@ -1,0 +1,7 @@
+::1 - - [23/Apr/2024:16:18:35 +0000] "POST /api/v1/web/client/signUp HTTP/1.1" 201 100 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:18:45 +0000] "POST /api/v1/web/client/signUp HTTP/1.1" 400 39 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:20:01 +0000] "POST /api/v1/web/client/signUp HTTP/1.1" 201 110 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:20:54 +0000] "POST /api/v1/web/client/signUp HTTP/1.1" 201 106 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:22:36 +0000] "GET /api/v1/web/client/list HTTP/1.1" 200 521 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:37:15 +0000] "POST /api/v1/web/clothes/save HTTP/1.1" 500 1533 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:16:48:35 +0000] "POST /api/v1/web/clothes/save HTTP/1.1" 500 848 "-" "PostmanRuntime/7.37.3"

@@ -21,13 +21,13 @@ model client {
 }
 
 model collection {
-
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  image     String 
+  image     String
   type      String
   createdAT DateTime @default(now())
   updatedAT DateTime @updatedAt
 
+  clothes clothes[]
 }
 
 model order {
@@ -40,17 +40,17 @@ model order {
 }
 
 model clothes {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  image     String
-  brand     String
-  size      String
-  quantity  Int
-  type      String
-  gender    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  image        String
+  brand        String
+  size         String
+  quantity     Int
+  gender       String
+  collection   collection? @relation(fields: [collectionId], references: [id])
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  collectionId String?     @db.ObjectId
 }
-
 
 model delivery {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
