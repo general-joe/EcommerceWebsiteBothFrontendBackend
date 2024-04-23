@@ -42,8 +42,8 @@ model clothes {
   id           String      @id @default(auto()) @map("_id") @db.ObjectId
   image        String
   description  String
-  quantity     Int
-  price        Int
+  quantity     String    
+  price        String         @default("0.00")
   gender       String
   collection   collection? @relation(fields: [collectionId], references: [id])
   createdAt    DateTime    @default(now())
