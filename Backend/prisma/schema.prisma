@@ -42,9 +42,9 @@ model order {
 model clothes {
   id           String      @id @default(auto()) @map("_id") @db.ObjectId
   image        String
-  brand        String
-  size         String
+  description String
   quantity     Int
+  price Int
   gender       String
   collection   collection? @relation(fields: [collectionId], references: [id])
   createdAt    DateTime    @default(now())
