@@ -10,7 +10,7 @@ const getCollection = async () => {
     orderBy: {
       createdAT: "desc",
     },
-    include:{
+    include:{      
         clothes: true
     }
   });
