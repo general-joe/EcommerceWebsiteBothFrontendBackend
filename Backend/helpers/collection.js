@@ -10,6 +10,9 @@ const getCollection = async () => {
     orderBy: {
       createdAT: "desc",
     },
+    include:{      
+        clothes: true
+    }
   });
   return collection;
 };
