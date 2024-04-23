@@ -18,3 +18,6 @@
 ::1 - - [23/Apr/2024:22:42:34 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 200 808 "-" "PostmanRuntime/7.37.3"
 ::1 - - [23/Apr/2024:22:43:39 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 500 1055 "-" "PostmanRuntime/7.37.3"
 ::1 - - [23/Apr/2024:22:44:21 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 200 808 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:23:23:43 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 500 703 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:23:24:52 +0000] "GET /api/v1/web/collection/list HTTP/1.1" 500 643 "-" "PostmanRuntime/7.37.3"
+::1 - - [23/Apr/2024:23:25:47 +0000] "GET /api/v1/web/collection/list HTTP/1.1" - - "-" "PostmanRuntime/7.37.3"
