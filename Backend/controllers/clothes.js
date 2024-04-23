@@ -26,7 +26,7 @@ exports.saveClothes= async(req,res,next) => {
             data.image = uploaded.secure_url;
           }
         }
-        const collection = await addCollection(data);
+        const collection = await saveClothes(data);
     
         res.status(httpstatus.OK).json({
           collection,
