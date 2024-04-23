@@ -1,0 +1,13 @@
+2024-04-23T19:50:35.916Z [31merror[39m:	
+Invalid `prisma.collection.create()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:3:34
+
+  1 const prisma = require("../utils/prismaUtil");
+  2 const addCollection= async (data) => {
+→ 3   return await prisma.collection.create({
+        data: {
+      +   type: types
+        }
+      })
+
+Argument `type` is missing.

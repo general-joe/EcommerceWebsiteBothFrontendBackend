@@ -2,6 +2,7 @@ const CustomError =  require("../utils/customErrorClass");
 const httpstatus = require("../utils/httpstatus");
 const logger = require("../utils/loggerUtil");
 
+const cloudinary = require("../utils/cloudinary");
 
 
 const {
