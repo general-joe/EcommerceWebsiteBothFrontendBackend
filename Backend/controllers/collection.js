@@ -13,7 +13,7 @@ const {
 } = require("../helpers/collection");
 
 
-exports.register_collection= async (req, res, next) => {
+exports.saveCollection= async (req, res, next) => {
   try {
     const data = req.body;
     const image = req.file ? req.file.path : undefined;
