@@ -1,49 +1,51 @@
 const prisma = require("../utils/prismaUtil");
-
-const saveCollection = async(data) => {
-    const collection = await prisma.collection.create({
-        data,
-    })
-    return collection
+const addCollection= async (data) => {
+  return await prisma.collection.create({
+    data,
+  });
 };
 
-const getCollection = async() => {
-    const collection = await prisma.collection.findMany();
-    return collection
+const getCollection = async () => {
+  const collection = await prisma.collection.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return collection;
+};
+const getSingleCollection= async (id) => {
+  const collection = await prisma.collection.findUnique({
+    where: {
+      id,
+    },
+  });
+  return collection;
 };
 
-const getCollectionById = async(id) => {
-    const collection = await prisma.findUnique({
-        where:{
-            id,
-        }
-    })
-    return collection
+const editCollection = async (id, data) => {
+  const collection = await prisma.collection.update({
+    where: {
+      id,
+    },
+    data,
+  });
+  return collection;
 };
-const updateCollection = async(id, data) => {
-    const collection = await prisma.collection.update({
-        where:{
-            id,
-        },
-        data,
-    })
-    return collection
-};
-const deleteCollection = async(id) => {
-    const collection = await prisma.collection.delete({
-        where:{
-            id,
-        }
-    });
-    return collection
+const removeCollection = async (id) => {
+  const collection = await prisma.collection.delete({
+    where: {
+      id
+    },
+  });
+  return collection;
 };
 
 
 module.exports = {
-    saveCollection,
+    addCollection,
     getCollection,
-    getCollectionById,
-    updateCollection,
-    deleteCollection,
-
-}
+    getSingleCollection,
+    editCollection,
+    removeCollection,
+ 
+};
