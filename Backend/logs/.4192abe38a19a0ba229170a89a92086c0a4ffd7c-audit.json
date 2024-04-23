@@ -6,14 +6,9 @@
     "auditLog": "logs\\.4192abe38a19a0ba229170a89a92086c0a4ffd7c-audit.json",
     "files": [
         {
-            "date": 1712585347866,
-            "name": "logs\\“NodeWinstonApp-2024-04-08-14.log",
-            "hash": "586de79d00a4cb7e6633b908f0840fe62c62d49ea38567bc0f86993f2b46722b"
-        },
-        {
-            "date": 1712672277651,
-            "name": "logs\\“NodeWinstonApp-2024-04-09-14.log",
-            "hash": "2968ee6a6f510df226829e3ac0e7e5994fccdecc0bae8a0e60b659b3ecd76cee"
+            "date": 1713888774113,
+            "name": "logs\\“NodeWinstonApp-2024-04-23-16.log",
+            "hash": "ad1dc819124ddad5dbc5ed4c96070187e630acaa4f49aec6bb466355bae61e6b"
         }
     ],
     "hashType": "sha256"
