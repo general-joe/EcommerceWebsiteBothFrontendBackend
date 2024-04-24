@@ -8,7 +8,7 @@ const Item = (props) => {
   const quantityColorClass = getQuantityColorClass(props.quantity);
   const isOutOfStock = props.quantity === 0;
   return (
-    <div className="w-72 hover:shadow-2xl transition-all ease-out hover:scale-105 duration-500 m-5 rounded-xl ">
+    <div className="w-72 hover:shadow-2xl transition-all ease-out hover:scale-105 duration-500 m-5 rounded-xl mx-auto">
       <Link to={`/product/${props.id}`}>
         <LazyLoadImage
           className="skeleton"

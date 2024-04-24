@@ -1,34 +1,27 @@
-// import p1_img from './product_1.png'
-// import p2_img from './product_2.png'
-// import p3_img from './product_3.png'
-// import p4_img from './product_4.png'
+import member341 from "./member-341.jpg";
+import member342 from "./member-342.jpg";
+import member343 from "./member-343.jpg";
+import member345 from "./member-345.jpg";
+// import member344 from "./member-344.jpg";
+// import member346 from "./member-346.jpg";
+// import member349 from "./member-349.jpg";
+import member347 from "./member-347.jpg";
+import member348 from "./member-348.jpg";
+import member350 from "./member-350.jpg";
 
-// let data_product = [
-//   {
-//     id:1,
-//     name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-//     image:p1_img,
-//     new_price:50.00,
-//     old_price:80.50,
-//   },
-//   {id:2,
-//     name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-//     image:p2_img,
-//     new_price:85.00,
-//     old_price:120.50,
-//   },
-//   {id:3,
-//     name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-//     image:p3_img,
-//     new_price:60.00,
-//     old_price:100.50,
-//   },
-//   {id:4,
-//     name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-//     image:p4_img,
-//     new_price:100.00,
-//     old_price:150.00,
-//   },
-// ];
+const members_data = [
+  {
+    id: 1,
+    name: "",
+    image: member341,
+    indexNumber: "5221040341",
+  },
+  { id: 2, name: "", image: member342, indexNumber: "5221040342" },
+  { id: 3, name: "", image: member343, indexNumber: "5221040343" },
+  { id: 4, name: "", image: member345, indexNumber: "5221040345" },
+  { id: 5, name: "", image: member347, indexNumber: "5221040347" },
+  { id: 6, name: "", image: member348, indexNumber: "5221040348" },
+  { id: 7, name: "", image: member350, indexNumber: "5221040350" },
+];
 
-// export default data_product;
+export default members_data;

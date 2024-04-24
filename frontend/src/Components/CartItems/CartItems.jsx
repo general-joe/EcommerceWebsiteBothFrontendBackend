@@ -53,7 +53,7 @@ const CartItems = () => {
           <p>Looks like you haven't added any items to the cart yet</p>
         </div>
       )}
-      <div className="cartitems-down">
+      <div className="cartitems-down flex-col lg:flex gap-10">
         <div className="cartitems-total">
           <h1>Cart Totals</h1>
           <div>
