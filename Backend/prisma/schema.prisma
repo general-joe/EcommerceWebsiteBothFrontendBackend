@@ -22,10 +22,9 @@ model client {
 
 model collection {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  type      types
+  type      type
   createdAT DateTime @default(now())
   updatedAT DateTime @updatedAt
-
   clothes clothes[]
 }
 
@@ -38,12 +37,13 @@ model order {
   updatedAt   DateTime  @updatedAt
 }
 
+
 model clothes {
   id           String      @id @default(auto()) @map("_id") @db.ObjectId
   image        String
   description  String
-  quantity     Int
-  price        Int
+  quantity     String    
+  price        String         @default("0.00")
   gender       String
   collection   collection? @relation(fields: [collectionId], references: [id])
   createdAt    DateTime    @default(now())
@@ -68,8 +68,9 @@ model delivery {
   updatedAt   DateTime @updatedAt
 }
 
-enum types {
-  men
-  women
-  kids
+enum type {
+  ALL
+  MEN
+  WOMEN
+  KIDS
 }
