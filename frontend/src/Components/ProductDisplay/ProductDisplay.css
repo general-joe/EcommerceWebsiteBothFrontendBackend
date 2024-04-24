@@ -1,16 +1,19 @@
 .productdisplay {
   display: flex;
   margin: 0px 170px;
+  width: 85%;
 }
 
 .productdisplay-left {
   display: flex;
+  width: 100%;
   gap: 17px;
 }
 
 .productdisplay-img-list {
   display: flex;
   flex-direction: column;
+  width: 200px;
   gap: 16px;
 }
 
@@ -19,12 +22,13 @@
 }
 
 .productdisplay-main-img {
-  width: 586px;
+  width: 850px;
   height: 700px;
 }
 
 .productdisplay-right {
   margin: 0px 70px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -82,7 +86,7 @@
   cursor: pointer;
 }
 
-.productdisplay-right button {
+.productdisplay-right .right-button {
   padding: 20px 40px;
   width: 200px;
   font-size: 16px;
