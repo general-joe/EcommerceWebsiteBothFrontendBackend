@@ -1,18 +1,29 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./ProductDisplay.css";
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
-import { ShopContext } from "../../Context/ShopContext";
+import { addToCart } from "../../AppSetup/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductDisplay = (props) => {
   const { product } = props;
-  const {addToCart} = useContext(ShopContext)
+  const dispatch = useDispatch();
+  const [itemQuantity, setItemQuantity] = React.useState(1);
+
+  const incrementQuantity = () => {
+    setItemQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrementQuantity = () => {
+    setItemQuantity((prevQuantity) =>
+      prevQuantity > 1 ? prevQuantity - 1 : prevQuantity
+    );
+  };
+
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
         </div>
@@ -21,7 +32,7 @@ const ProductDisplay = (props) => {
         </div>
       </div>
       <div className="productdisplay-right">
-        <h1>{product.name}</h1>
+        <h1>{product.description}</h1>
         <div className="productdisplay-right-star">
           <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
@@ -31,33 +42,49 @@ const ProductDisplay = (props) => {
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">
-            GHC{product.old_price}
-          </div>
+          <div className="productdisplay-right-price-old">GHC99.00</div>
           <div className="productdisplay-right-price-new">
-            GHC{product.new_price}
+            GHC{product.price}
           </div>
         </div>
         <div className="productdisplay-right-description">
-          A lightweight, usually knitted, pullover shirt, close fitting and with a
-          round neckline short sleeves, worn as an undershirt or outer garment.
+          A lightweight, usually knitted, pullover shirt, close fitting and with
+          a round neckline short sleeves, worn as an undershirt or outer
+          garment.
         </div>
-        <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
-          <div className="productdisplay-right-sizes">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+        {/* Quantity specifier */}
+        <div className="productdisplay-right-quantity">
+          <div className="flex items-center gap-5 w-full  justify-start p-2">
+            <button className="btn w-5 h-5" onClick={decrementQuantity}>
+              -
+            </button>
+            <p className="w-10 h-10 border-2 rounded-lg  text-center text-2xl">
+              {itemQuantity}
+            </p>
+            <button className="btn w-5 h-5" onClick={incrementQuantity}>
+              +
+            </button>
           </div>
+          <p>Available in stock: {product.quantity}</p>
         </div>
-        <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+        <button
+          className="mt-3 right-button"
+          onClick={() => {
+            const productData = {
+              ...product,
+              quantity: itemQuantity,
+            };
+            dispatch(addToCart(productData));
+          }}
+        >
+          ADD TO CART
+        </button>
         <p className="productdisplay-right-category">
-          <span>Category :</span>Women, T-Shirt, Crop Top
+          <span>Category:</span>
+          {product.gender}
         </p>
         <p className="productdisplay-right-category">
-          <span>Tags :</span>Modern, Latest
+          <span>Tags:</span>Modern, Latest
         </p>
       </div>
     </div>

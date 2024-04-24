@@ -1,0 +1,161 @@
+2024-04-23T22:07:50.153Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:10:46
+
+   7 };
+   8 
+   9 const getCollection = async () => {
+→ 10   const collection = await prisma.collection.findMany({
+         orderBy: {
+           createdAT: "desc",
+           id: true,
+               ~~~~
+           type: true,
+           include: {
+             clothes: true
+           }
+         }
+       })
+
+Invalid value for argument `id`. Expected SortOrder.
+2024-04-23T22:08:20.144Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:10:46
+
+   7 };
+   8 
+   9 const getCollection = async () => {
+→ 10   const collection = await prisma.collection.findMany({
+         orderBy: {
+           createdAT: "desc",
+           type: true,
+                 ~~~~
+           include: {
+             clothes: true
+           }
+         }
+       })
+
+Invalid value for argument `type`. Expected SortOrder.
+2024-04-23T22:08:36.495Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:10:46
+
+   7 };
+   8 
+   9 const getCollection = async () => {
+→ 10   const collection = await prisma.collection.findMany({
+         orderBy: {
+           createdAT: "desc",
+           include: {
+           ~~~~~~~
+             clothes: true
+           },
+       ?   id?: SortOrder,
+       ?   type?: SortOrder,
+       ?   updatedAT?: SortOrder,
+       ?   clothes?: clothesOrderByRelationAggregateInput
+         }
+       })
+
+Unknown argument `include`. Available options are marked with ?.
+2024-04-23T22:09:23.784Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:10:46
+
+   7 };
+   8 
+   9 const getCollection = async () => {
+→ 10   const collection = await prisma.collection.findMany({
+         orderBy: {
+           createdAT: "desc",
+           select: {
+           ~~~~~~
+             clothes: true
+           },
+       ?   id?: SortOrder,
+       ?   type?: SortOrder,
+       ?   updatedAT?: SortOrder,
+       ?   clothes?: clothesOrderByRelationAggregateInput
+         }
+       })
+
+Unknown argument `select`. Available options are marked with ?.
+2024-04-23T22:39:01.048Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:9:46
+
+  6 };
+  7 
+  8 const getCollection = async () => {
+→ 9   const collection = await prisma.collection.findMany(
+Cannot select both '$scalars: true' and a specific scalar field 'All'.
+2024-04-23T22:39:52.750Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:9:46
+
+  6 };
+  7 
+  8 const getCollection = async () => {
+→ 9   const collection = await prisma.collection.findMany({
+        orderBy: {
+          createdAT: "desc",
+          include: {
+          ~~~~~~~
+            All: true
+          },
+      ?   id?: SortOrder,
+      ?   type?: SortOrder,
+      ?   updatedAT?: SortOrder,
+      ?   clothes?: clothesOrderByRelationAggregateInput
+        },
+        include: {
+          clothes: true
+        }
+      })
+
+Unknown argument `include`. Available options are marked with ?.
+2024-04-23T22:40:09.752Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:9:46
+
+  6 };
+  7 
+  8 const getCollection = async () => {
+→ 9   const collection = await prisma.collection.findMany({
+        orderBy: {
+          createdAT: "desc",
+          select: {
+          ~~~~~~
+            All: true
+          },
+      ?   id?: SortOrder,
+      ?   type?: SortOrder,
+      ?   updatedAT?: SortOrder,
+      ?   clothes?: clothesOrderByRelationAggregateInput
+        },
+        include: {
+          clothes: true
+        }
+      })
+
+Unknown argument `select`. Available options are marked with ?.
+2024-04-23T22:43:39.256Z [31merror[39m:	
+Invalid `prisma.collection.findMany()` invocation in
+C:\Users\Lyfer\Documents\Project\MerchUp\Backend\helpers\collection.js:9:46
+
+  6 };
+  7 
+  8 const getCollection = async () => {
+→ 9   const collection = await prisma.collection.findMany({
+        orderBy: {
+          createdAT: "desc",
+          type: true
+                ~~~~
+        },
+        include: {
+          clothes: true
+        }
+      })
+
+Invalid value for argument `type`. Expected SortOrder.

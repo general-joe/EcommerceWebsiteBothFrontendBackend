@@ -13,7 +13,7 @@ const getClothes = async () =>{
 };
 
 const getsingleClothe = async(id) =>{
-    const clothe = await prisma.clothe.findUnique({
+    const clothe = await prisma.clothes.findUnique({
         where: {
             id,
         }
@@ -22,7 +22,7 @@ const getsingleClothe = async(id) =>{
 };
 
 const updateClothe = async(id, data) =>{
-    const clothe = await prisma.clothe.update({
+    const clothe = await prisma.clothes.update({
         where: {
             id,
         },
@@ -32,7 +32,7 @@ const updateClothe = async(id, data) =>{
 };
 
 const removeClothe = async(id) =>{
-    const clothe = await prisma.clothe.delete({
+    const clothe = await prisma.clothes.delete({
         where: {
             id,
         },

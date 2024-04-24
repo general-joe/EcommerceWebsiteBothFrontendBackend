@@ -42,7 +42,6 @@ const login = async (email) => {
       email,
     },
     select: {
-      role: true,
       id: true,
       email: true,
       password: true,
