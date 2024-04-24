@@ -1,26 +1,37 @@
 import React from "react";
 import "./NewCollections.css";
-import new_collection from "../Assets/new_collections";
 import Item from "../Item/Item";
+import { merchApi } from "../../AppSetup/api";
+import { generateRandomProduct } from "../../utils/feature";
 
 const NewCollections = () => {
+  const { data, isLoading } = merchApi.useGetCollectionsQuery();
+  const collections = data?.collection[2]?.clothes;
+  const new_collection = collections ? collections.slice(0, 8) : [];
+  const isNewCollectionEmpty =
+    Array.isArray(new_collection) && new_collection.length === 0;
+  const mainCollection = generateRandomProduct(new_collection);
   return (
     <div className="new-collections">
       <h1>NEW COLLECTIONS</h1>
       <hr />
       <div className="collections">
-        {new_collection.map((item, i) => {
-          return (
+        {isLoading ? (
+          <div className="loader"></div>
+        ) : isNewCollectionEmpty ? (
+          <div>No products to display yet.</div>
+        ) : (
+          mainCollection.map((item) => (
             <Item
-              key={i}
+              key={item.id}
               id={item.id}
-              name={item.name}
+              description={item.description}
               image={item.image}
-              new_price={item.new_price}
-              old_price={item.old_price}
+              quantity={item.quantity}
+              new_price={item.price}
             />
-          );
-        })}
+          ))
+        )}
       </div>
     </div>
   );

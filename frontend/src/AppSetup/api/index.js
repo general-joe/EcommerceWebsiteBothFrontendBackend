@@ -17,7 +17,14 @@ export const merchApi = createApi({
   }),
   endpoints: (builder) => ({
     getCollections: builder.query({
-      query: () => "/collection",
+      query: () => "/collection/list",
+    }),
+    createOrder: builder.mutation({
+      query: (order) => ({
+        url: "/order/save",
+        method: "POST",
+        body: order,
+      }),
     }),
     createUser: builder.mutation({
       query: (user) => ({

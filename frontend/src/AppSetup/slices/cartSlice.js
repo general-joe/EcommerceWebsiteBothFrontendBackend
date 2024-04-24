@@ -1,0 +1,62 @@
+import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
+
+const initialState = {
+  cartItems: [],
+};
+
+export const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addToCart: (state, action) => {
+      const itemExists = state.cartItems.some(
+        (item) => item.id === action.payload.id
+      );
+      if (itemExists) {
+        toast.error("Item is already in the cart");
+      } else {
+        state.cartItems = [...state.cartItems, action.payload];
+        toast.success("Item Added to Cart");
+      }
+    },
+
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
+      toast.error("Item Removed from Cart");
+    },
+    emptyCart: (state) => {
+      state.cartItems = [];
+    },
+    updateCartQty: (state, action) => {
+      const oldstate = state.cartItems;
+      const newupdate = action.payload;
+      const newArr = oldstate.map((obj) => {
+        if (obj.id === newupdate.id) {
+          return { ...obj, quantity: obj.quantity + newupdate.quantity };
+        }
+        return obj;
+      });
+      state.cartItems = newArr;
+      toast.success("Qty Updated");
+    },
+  },
+});
+
+export const { addToCart, removeFromCart, updateCartQty, emptyCart } =
+  cartSlice.actions;
+
+export const cartItems = (state) => state.cart.cartItems;
+
+export const getTotalCartAmount = (products) => {
+  const total = products?.reduce(
+    (accumulator, product) =>
+      accumulator + Number(product.price) * product.quantity,
+    0
+  );
+  return parseFloat(total).toFixed(2);
+};
+
+export default cartSlice.reducer;

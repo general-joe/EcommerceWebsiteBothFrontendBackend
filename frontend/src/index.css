@@ -13,10 +13,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "poppins", sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Text gradient */
+.text-gradient-quantity {
+  background-image: -webkit-linear-gradient(45deg, #db39d6 44%, #e91e63 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Line through formatting */
+.text-through {
+  text-decoration: line-through;
+}
+/* Loader */
+.loader {
+  width: 120px;
+  height: 20px;
+  margin: 0 auto;
+  -webkit-mask: linear-gradient(90deg, #000 70%, #0000 0) left/20% 100%;
+  background: linear-gradient(#771124 0 0) left -25% top 0 /20% 100% no-repeat
+    #ddd;
+  animation: l7 1s infinite steps(6);
+}
+@keyframes l7 {
+  100% {
+    background-position: right -25% top 0;
+  }
 }
