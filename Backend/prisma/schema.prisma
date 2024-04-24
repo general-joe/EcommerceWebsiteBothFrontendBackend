@@ -14,12 +14,19 @@ datasource db {
 }
 
 model client {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   username String
-  email    String  @unique
+  email    String @unique
   password String
 }
 
+model collection {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  type      type
+  createdAT DateTime @default(now())
+  updatedAT DateTime @updatedAt
+  clothes clothes[]
+}
 
 model order {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
@@ -28,10 +35,21 @@ model order {
   delivery    delivery?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  
 }
 
 
+model clothes {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  image        String
+  description  String
+  quantity     String    
+  price        String         @default("0.00")
+  gender       String
+  collection   collection? @relation(fields: [collectionId], references: [id])
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  collectionId String?     @db.ObjectId
+}
 
 model delivery {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -48,4 +66,11 @@ model delivery {
   orderId     String   @unique @db.ObjectId
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+enum type {
+  ALL
+  MEN
+  WOMEN
+  KIDS
 }
