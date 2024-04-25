@@ -2,7 +2,7 @@ import member341 from "./member-341.jpg";
 import member342 from "./member-342.jpg";
 import member343 from "./member-343.jpg";
 import member345 from "./member-345.jpg";
-import member344 from "./member-344.jpg";
+//import member344 from "./member-344.jpg";
 import member346 from "./member-346.jpg";
 import member349 from "./member-349.jpg";
 import member347 from "./member-347.jpg";
@@ -20,7 +20,7 @@ const members_data = [
   { id: 3, name: "Antwi Clinton", image: member343, indexNumber: "5221040343" },
   {
     id: 4,
-    name: "Elizabeth Afrakomah",
+    name: "Elizabeth A. Afrakomah",
     image: member345,
     indexNumber: "5221040345",
   },
