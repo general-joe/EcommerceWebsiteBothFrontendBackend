@@ -25,25 +25,14 @@ const members_data = [
     indexNumber: "5221040345",
   },
   { id: 8, name: "Rashid Bawa", image: member347, indexNumber: "5221040346" },
-  {
-    id: 5,
-    name: "Antwi Bosiako Kwame",
-    image: member347,
-    indexNumber: "5221040347",
-  },
+  
   {
     id: 6,
     name: "Obeng Clement Boadu",
     image: member348,
     indexNumber: "5221040348",
   },
-  { id: 6, name: "Asuo Gdofred", image: member349, indexNumber: "5221040349" },
-  {
-    id: 7,
-    name: "Noamesi Edmund",
-    image: member350,
-    indexNumber: "5221040350",
-  },
+
 ];
 
 export default members_data;
