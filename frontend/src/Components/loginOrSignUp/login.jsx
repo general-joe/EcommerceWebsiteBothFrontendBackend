@@ -46,11 +46,11 @@ function Login() {
     <div className="w-full h-auto bg-pink-100 py-20">
       <div className="flex max-md:flex-col max-md:justify-center max-md:items-center gap-10 h-auto p-2 overflow-hidden justify-around">
         <img
-          className="w-[500px] h-[450px] object-cover"
+          className="w-[500px] h-[450px] object-cover max-sm:hidden"
           src={logo}
           alt="img"
         />
-        <div className="w-[580px] h-auto bg-white p-10 overflow-hidden">
+        <div className="w-[580px] max-md:w-full h-auto bg-white p-10 overflow-hidden">
           <h1 className="text-red-500 mt-5 mb-5 text-shadow text-2xl">
             Log In
           </h1>

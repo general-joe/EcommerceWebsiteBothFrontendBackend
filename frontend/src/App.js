@@ -13,6 +13,7 @@ import kid_banner from "./Components/Assets/banner_kids.png";
 import { Toaster } from "react-hot-toast";
 import Login from "./Components/loginOrSignUp/login";
 import Checkout from "./Pages/Checkout";
+import AboutUs from "./Pages/About";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/signup" element={<LoginSignUp />} />
           <Route path="/login" element={<Login />} />

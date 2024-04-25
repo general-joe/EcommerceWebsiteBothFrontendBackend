@@ -21,9 +21,9 @@ const ProductDisplay = (props) => {
   };
 
   return (
-    <div className="productdisplay">
-      <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
+    <div className="flex mx-auto w-3/4 overflow-hidden gap-10 max-sm:m-0 max-sm:w-full max-md:flex-col">
+      <div className="flex w-full gap-4 max-md:flex-col-reverse">
+        <div className="flex flex-col w-50 gap-4 max-sm:flex-row max-sm:h-32 max-sm:w-full overflow-x-auto">
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
         </div>
@@ -31,8 +31,8 @@ const ProductDisplay = (props) => {
           <img className="productdisplay-main-img" src={product.image} alt="" />
         </div>
       </div>
-      <div className="productdisplay-right">
-        <h1>{product.description}</h1>
+      <div class="m-0 w-full flex flex-col my-5">
+        <h1 className="font-medium text-lg">{product.description}</h1>
         <div className="productdisplay-right-star">
           <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
@@ -42,10 +42,10 @@ const ProductDisplay = (props) => {
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">GHC99.00</div>
           <div className="productdisplay-right-price-new">
             GHC{product.price}
           </div>
+          <div className="productdisplay-right-price-old">GHC99.00</div>
         </div>
         <div className="productdisplay-right-description">
           A lightweight, usually knitted, pullover shirt, close fitting and with
@@ -68,7 +68,7 @@ const ProductDisplay = (props) => {
           <p>Available in stock: {product.quantity}</p>
         </div>
         <button
-          className="mt-3 right-button"
+          class="right-button p-5 px-10 w-50 my-5 text-base font-semibold text-white bg-red-500 mb-10 border-none outline-none cursor-pointer"
           onClick={() => {
             const productData = {
               ...product,
